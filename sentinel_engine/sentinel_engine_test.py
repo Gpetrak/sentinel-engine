@@ -109,12 +109,12 @@ def processing():
 def geoserver_upload(products):
     for i in range(len(products)):
         print products[i]
-        path = " http://83.212.100.149/geoserver/rest/workspaces/geonode/coveragestores/"    \
+        path = " http://localhost:8080/geoserver/rest/workspaces/geonode/coveragestores/"    \
                + products[i].replace(".tif","") + "/file.geotiff"
         create_cover_cmd = "curl -u admin:geoserver -v -XPOST -H 'Content-type: application/xml' -d '<coverageStore><name>"    \
                            + products[i].replace(".tif","") +    \
                            "</name><workspace>geonode</workspace><enabled>true</enabled><type>GeoTIFF</type><url>file:///home/user/"    \
-                           + products[i] + "</url></coverageStore>' http://83.212.100.149/geoserver/rest/workspaces/geonode/coveragestores"
+                           + products[i] + "</url></coverageStore>' http://localhost:8080/geoserver/rest/workspaces/geonode/coveragestores"
         upload_cover_cmd = "curl -u admin:geoserver -v -XPUT -H 'Content-type: image/tiff' --data-binary @"
       #  print create_cover_cmd
       #  print (upload_cover_cmd + products[i] + path)
