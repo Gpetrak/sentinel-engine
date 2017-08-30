@@ -34,7 +34,7 @@ To run the program sentinel_engine_24.py in the background type::
    
     nohup sudo python sentinel_engine_24.py <username> <password> <yes / no> &
 
-To run the program sentinel_engine_now.py type::
+To test Sentinel-Engine run sentinel_engine_test.py type::
 
-    sudo python sentinel_engine_now.py <username> <password> <yes / no> 
+    sudo python sentinel_engine_test.py <username> <password> <yes / no> 
 
