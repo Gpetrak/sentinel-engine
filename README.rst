@@ -5,6 +5,7 @@ Sentinel-Engine was created by **Senselab** within Crete-GIS project which recei
 
 Sentinel Engine is a project that execute tasks like searching, downloading, processing and uploading Sentinel data in GeoServer, without supervising from the user. The geographic area which is covered is the region of Crete.
 It is connected with Copernicus Open Access Hub (https://scihub.copernicus.eu/dhus/) (it is mandatory to have an account), searches every day for new datasets, downloads new datasets, processes them and finally (if the user has an up and running GeoServer instance), uploads them on it.
+If our GeoServer instance is included in a GeoNode project, we can update our data in order to be included in our project.
 
 The program developed and tested in Ubuntu 16.04.
 
@@ -27,14 +28,15 @@ Run the program
 To run the program sentinel_engine_24.py type::
 
     cd sentinel_engine
-    sudo python sentinel_engine_24.py <username> <password> <yes / no>
-    # we type yes if we want our data to be uploaded in GeoServer
+    sudo python sentinel_engine_24.py <username> <password> <yes / no> <workspace>
+    # we type yes if we want our data to be uploaded in GeoServer.
+    # If we typed yes, we have to type GeoServer' workspace also.
 
 To run the program sentinel_engine_24.py in the background type::
    
-    nohup sudo python sentinel_engine_24.py <username> <password> <yes / no> &
+    nohup sudo python sentinel_engine_24.py <username> <password> <yes / no> <workspace> &
 
 To test Sentinel-Engine run sentinel_engine_test.py type::
 
-    sudo python sentinel_engine_test.py <username> <password> <yes / no> 
+    sudo python sentinel_engine_test.py <username> <password> <yes / no> <workspace>
 

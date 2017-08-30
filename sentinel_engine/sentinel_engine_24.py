@@ -113,21 +113,24 @@ def processing(products):
 
 # uploads to GeoServer the products
 def geoserver_upload(products):
+    # The value of workspace of GeoServer is typed when the program is exetuted
+    workspace = sys.argv[4]
     for i in range(len(products)):
         print products[i]
-        path = " http://localhost:8080/geoserver/rest/workspaces/geonode/coveragestores/"    \
+        path = " http://localhost:8080/geoserver/rest/workspaces/%s/coveragestores/" % workspace    \
                + products[i].replace(".tif","") + "/file.geotiff"
         create_cover_cmd = "curl -u admin:geoserver -v -XPOST -H 'Content-type: application/xml' -d '<coverageStore><name>"    \
                            + products[i].replace(".tif","") +    \
-                           "</name><workspace>geonode</workspace><enabled>true</enabled><type>GeoTIFF</type><url>file:data/geonode/"    \
-                           + products[i] + "</url></coverageStore>' http://localhost:8080/geoserver/rest/workspaces/geonode/coveragestores"
+                           "</name><workspace>%s</workspace><enabled>true</enabled><type>GeoTIFF</type><url>file:data/%s/" % workspace    \
+                           + products[i] + "</url></coverageStore>' http://localhost:8080/geoserver/rest/workspaces/%s/coveragestores" % workspace
         upload_cover_cmd = "curl -u admin:geoserver -v -XPUT -H 'Content-type: image/tiff' --data-binary @"
       #  print create_cover_cmd
       #  print (upload_cover_cmd + products[i] + path)
         os.system(create_cover_cmd)
         os.system(upload_cover_cmd + products[i] + path)
+    # This command updates the date of GeoNode project
     os.system("python /home/geonode/crete-gis/manage.py updatelayers")
-   # remove_needless_files(products)
+    # remove_needless_files(products)
 
 # Future function that will remove needless zip, vrt and tif files
 '''
