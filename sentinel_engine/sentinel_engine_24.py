@@ -126,7 +126,7 @@ def geoserver_upload(products):
       #  print (upload_cover_cmd + products[i] + path)
         os.system(create_cover_cmd)
         os.system(upload_cover_cmd + products[i] + path)
-    os.system("python /home/geonode/crete-gis/manage.py updatelayers")
+    os.system("python /home/user/env/crete-gis/manage.py updatelayers")
    # remove_needless_files(products)
 
 # Future function that will remove needless zip, vrt and tif files
