@@ -27,14 +27,14 @@ Run the program
 To run the program sentinel_engine_24.py type::
 
     cd sentinel_engine
-    sudo python sentinel_engine_24.py <username> <password> <yes / no>
+    sudo python sentinel_engine_24.py <username> <password> <yes / no> <workspace>
     # we type yes if we want our data to be uploaded in GeoServer
 
 To run the program sentinel_engine_24.py in the background type::
    
-    nohup sudo python sentinel_engine_24.py <username> <password> <yes / no> &
+    nohup sudo python sentinel_engine_24.py <username> <password> <yes / no> <workspace> &
 
 To test Sentinel-Engine run sentinel_engine_test.py type::
 
-    sudo python sentinel_engine_test.py <username> <password> <yes / no> 
+    sudo python sentinel_engine_test.py <username> <password> <yes / no> <workspace>
 
