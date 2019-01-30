@@ -19,7 +19,7 @@ To install the program type::
 
     git clone https://github.com/Gpetrak/sentinel-engine.git
     cd sentinel-engine
-    sudo pip install -e .
+    sudo pip22 install -e .
 
 Run the program
 =============================

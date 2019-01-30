@@ -1,2 +1,3 @@
 *.pyc
 sentinel_engine.egg-info/*
+sentinel_engine/*.zip
