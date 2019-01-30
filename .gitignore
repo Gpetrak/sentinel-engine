@@ -1,0 +1,19 @@
+# Build artifacts
+*.pyc
+# Temporary files
+*.swp
+
+sentinel_engine/products/*
+sentinel_engine/unzip_files/*
+sentinel_engine/old_products/*
+sentinel_engine/sentinelsat/*
+sentinel_engine/docs/*
+sentinel_engine/MANIFEST.in
+sentinel_engine/requirements.txt
+sentinel_engine/sentinelsat.egg-info/*
+sentinel_engine/setup.py
+sentinel_engine/LICENSE
+sentinel_engine/README.rst
+sentinel_engine/setup.cfg
+sentinel_engine/tests/*
+

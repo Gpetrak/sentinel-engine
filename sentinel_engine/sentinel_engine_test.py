@@ -51,7 +51,7 @@ hasRun = False
 # search by polygon, time, and SciHub query keywords
 def search():
     api.query(get_coordinates('polygon_crete.geojson'), \
-          None, date(2017, 06, 26), \
+          None, date(2019, 01, 17), \
           platformname = 'Sentinel-2', \
           producttype='S2MSI1C', \
           cloudcoverpercentage = '[0 TO 30]')
@@ -101,7 +101,7 @@ def processing():
         os.system(gdal_ndvi_8bit_cmd + " ndvi.tif " + output_ndvi_8bit)
         product_list.append(output_ndvi_8bit)
         print product_list
-    if sys.args[3]=="yes":
+    if sys.argv[3]=="yes":
         geoserver_upload(product_list)
     return product_list
 
@@ -123,7 +123,7 @@ def geoserver_upload(products):
         os.system(create_cover_cmd)
         os.system(upload_cover_cmd + products[i] + path)
     # This command updates the date of GeoNode project
-    os.system("python /home/geonode/crete-gis/manage.py updatelayers")
+    os.system("python /home/user/env/crete-gis/manage.py updatelayers")
    # remove_needless_files(products)
 
 # Future function that will remove needless zip, vrt and tif files

@@ -1,0 +1,11 @@
+requests
+click
+homura>=0.1.2
+html2text
+geojson
+tqdm
+
+[test]
+pytest
+requests-mock
+vcrpy

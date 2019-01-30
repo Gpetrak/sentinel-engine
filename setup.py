@@ -45,7 +45,7 @@ setup(
       # # Apps with official Ubuntu 16.04 packages
  
       "sentinelsat==0.7.3",
-      "gdal==1.11.3",
+      "gdal==1.11.2",
       "schedule>=0.4.3",
       "pycurl==7.43.0",
 ],

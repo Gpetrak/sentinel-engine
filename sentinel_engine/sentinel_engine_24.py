@@ -129,7 +129,7 @@ def geoserver_upload(products):
         os.system(create_cover_cmd)
         os.system(upload_cover_cmd + products[i] + path)
     # This command updates the date of GeoNode project
-    os.system("python /home/geonode/crete-gis/manage.py updatelayers")
+    os.system("python /home/user/env/crete-gis/manage.py updatelayers")
     # remove_needless_files(products)
 
 # Future function that will remove needless zip, vrt and tif files
@@ -166,7 +166,7 @@ def band_list(band_path):
 # search for new data in sentinel archive every day at 20:00
 # if it finds something call the processing function
 
-schedule.every().day.at("20:00").do(search)
+schedule.every().day.at("13:36").do(search)
 
 while True:
     schedule.run_pending()
