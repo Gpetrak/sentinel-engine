@@ -49,5 +49,5 @@ setup(
       "schedule>=0.4.3",
       "pycurl==7.43.0",
 ],
-
+)
 
