@@ -51,7 +51,7 @@ hasRun = False
 # search by polygon, time, and SciHub query keywords
 def search():
     api.query(get_coordinates('polygon_crete.geojson'), \
-          None, date(2019, 01, 17), \
+          None, date(2019, 01, 15), \
           platformname = 'Sentinel-2', \
           producttype='S2MSI1C', \
           cloudcoverpercentage = '[0 TO 30]')
@@ -101,7 +101,7 @@ def processing():
         os.system(gdal_ndvi_8bit_cmd + " ndvi.tif " + output_ndvi_8bit)
         product_list.append(output_ndvi_8bit)
         print product_list
-    if sys.args[3]=="yes":
+    if sys.argv[3]=="yes":
         geoserver_upload(product_list)
     return product_list
 
