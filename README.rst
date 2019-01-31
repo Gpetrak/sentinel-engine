@@ -20,6 +20,7 @@ To install the program type::
     source bin/activate
     easy_install pycurl==7.43
     git clone https://github.com/Gpetrak/sentinel-engine.git
+    
     cd sentinel-engine
     pip2 install -e .
 
