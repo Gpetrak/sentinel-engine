@@ -51,7 +51,7 @@ hasRun = False
 # search by polygon, time, and SciHub query keywords
 def search():
     api.query(get_coordinates('polygon_crete.geojson'), \
-          None, date(2019, 01, 15), \
+          None, date(2019, 01, 17), \
           platformname = 'Sentinel-2', \
           producttype='S2MSI1C', \
           cloudcoverpercentage = '[0 TO 30]')

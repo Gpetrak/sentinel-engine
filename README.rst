@@ -13,13 +13,15 @@ Installation
 
 First we are going to install the software packages we are going to need for the Sentinel-Engine setup::
     
-    sudo apt-get install python unzip python-pip
+    sudo apt-get install python unzip python-pip virtualenv libgnutls28-dev
 
 To install the program type::
-
+    cd env
+    source bin/activate
+    easy_install pycurl==7.43
     git clone https://github.com/Gpetrak/sentinel-engine.git
     cd sentinel-engine
-    sudo pip22 install -e .
+    pip2 install -e .
 
 Run the program
 =============================
@@ -27,14 +29,14 @@ Run the program
 To run the program sentinel_engine_24.py type::
 
     cd sentinel_engine
-    sudo python sentinel_engine_24.py <username> <password> <yes / no> <workspace>
+    python sentinel_engine_24.py <username> <password> <yes / no> <workspace>
     # we type yes if we want our data to be uploaded in GeoServer
 
 To run the program sentinel_engine_24.py in the background type::
    
-    nohup sudo python sentinel_engine_24.py <username> <password> <yes / no> <workspace> &
+    nohup python sentinel_engine_24.py <username> <password> <yes / no> <workspace> &
 
 To test Sentinel-Engine run sentinel_engine_test.py type::
 
-    sudo python sentinel_engine_test.py <username> <password> <yes / no> <workspace>
+    python sentinel_engine_test.py <username> <password> <yes / no> <workspace>
 
