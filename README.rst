@@ -16,11 +16,11 @@ First we are going to install the software packages we are going to need for the
     sudo apt-get install python unzip python-pip virtualenv libgnutls28-dev
 
 To install the program type::
+    
     cd env
     source bin/activate
     easy_install pycurl==7.43
     git clone https://github.com/Gpetrak/sentinel-engine.git
-    
     cd sentinel-engine
     pip2 install -e .
 
